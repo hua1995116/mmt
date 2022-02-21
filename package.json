@@ -1,6 +1,6 @@
 {
   "name": "mmt",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,14 @@
     "mmt": "./build/cli.js"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hua1995116/mmt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hua1995116/mmt/issues"
+  },
+  "homepage": "https://github.com/hua1995116/linec#readme",
   "author": "hua1995116 <qiufneghyf@gmail.com> (https://github.com/hua1995116)",
   "license": "MIT",
   "devDependencies": {

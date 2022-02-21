@@ -1,11 +1,18 @@
 
-<img src="./source/mmt-logo.png" align="center" />
+<p align="center">
+  <img src="./source/mmt-logo.png" width="300" />
+</p>
 
 
 # 介绍
 
 MMT (Manage Multiple Task) 是一个多任务流程的管理命令工具，专注解放你的生产力。
 
+
+# 安装
+```
+npm i -g mmt
+```
 ## 使用
 
 ```bash
