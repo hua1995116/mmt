@@ -10,4 +10,5 @@ yargs(hideBin(process.argv))
   .strict()
   // Useful aliases.
   .alias({ h: 'help' })
+  .alias({ v: 'version' })
   .argv;

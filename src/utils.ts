@@ -7,6 +7,7 @@ const execPromise = util.promisify(exec);
 
 export async function runAsync(command: string[]) {
   return new Promise((rev, rej) => {
+    console.log(command.slice(0, 1)[0], command.slice(1));
     const cmd = spawn(command.slice(0, 1)[0], command.slice(1));
 
     cmd.stdout.on('data', (data) => {

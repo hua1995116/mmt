@@ -24,7 +24,9 @@ export const handler = async (argv: Arguments<Options>): Promise<void> => {
   }
 
   if (tasklist.type === 'sync') {
-    await runAsync(tasklist.cm);
+    for (let i = 0; i < tasklist.cm.length; i++) {
+      await runAsync(tasklist.cm[i].split(" "));
+    }
     return;
   }
 
