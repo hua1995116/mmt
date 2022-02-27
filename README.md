@@ -28,6 +28,8 @@ mmt run hello
 
 ### add
 
+支持平台: Mac/Linux
+
 添加一个异步任务，任务会以新建一个 tab 页启动。
 
 常见场景:
@@ -53,10 +55,13 @@ mmt run muji
 例如我每次开发一些项目的时候都会用到 docker ，但是不同的项目想启动不同的实例。这个时候我就需要在电脑重启的时候启动对应的实例了。
 
 ```
-mmt add dc "docker restart 0d0awew0d";
-mmt add dc "docker restart 1d1awew0d";
+mmt add-sync start-docker "docker restart 0d0awew0d";
+mmt add-sync start-docker "docker restart 1d1awew0d";
 
-mmt run dc
+mmt run start-docker
+
+> docker restart 0d0awew0d
+> docker restart 1d1awew0d
 ```
 此时会在当前 tab 页里，一次运行以上两个命令
 
@@ -67,6 +72,7 @@ mmt run dc
 
 ```
 mmt ls muji
+
 > cd frontend/path && npm run start
 > cd server/path && npm run dev
 
