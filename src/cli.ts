@@ -2,8 +2,11 @@
 
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+const updater = require('pkg-updater');
+const pkg = require('../package.json');
 
-yargs(hideBin(process.argv))
+updater({'pkg': pkg}) .then(() => { 
+  yargs(hideBin(process.argv))
   // Use the commands directory to scaffold.
   .commandDir('commands')
   // Enable strict mode.
@@ -12,3 +15,4 @@ yargs(hideBin(process.argv))
   .alias({ h: 'help' })
   .alias({ v: 'version' })
   .argv;
+ });
