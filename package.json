@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "axios": "^0.26.0",
+    "pkg-updater": "^1.0.4",
     "ttab": "^0.7.2",
     "user-home": "^3.0.0",
     "yargs": "^17.3.1"
