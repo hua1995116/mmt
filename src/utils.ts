@@ -58,5 +58,9 @@ export function getConfig() {
 }
 
 export function saveConfig(config: Config) {
-  fs.writeFileSync(CACHE_JSON, JSON.stringify(config));
+  downloadConfig(CACHE_JSON, JSON.stringify(config));
+}
+
+export function downloadConfig(path: string, config: any) {
+  fs.writeFileSync(path, config);
 }

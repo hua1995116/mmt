@@ -29,6 +29,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "axios": "^0.26.0",
     "ttab": "^0.7.2",
     "user-home": "^3.0.0",
     "yargs": "^17.3.1"
