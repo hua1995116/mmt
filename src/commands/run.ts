@@ -1,5 +1,5 @@
 import type { Arguments, CommandBuilder } from 'yargs';
-import { getConfig, saveConfig, run, runAsync } from '../utils';
+import { getConfig, run } from '../utils';
 import { TTAB } from '../const';
 
 type Options = {
@@ -25,7 +25,7 @@ export const handler = async (argv: Arguments<Options>): Promise<void> => {
 
   if (tasklist.type === 'sync') {
     for (let i = 0; i < tasklist.cm.length; i++) {
-      await runAsync(tasklist.cm[i].split(" "));
+      await run(tasklist.cm[i].split(" "));
     }
     return;
   }
