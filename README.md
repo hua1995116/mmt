@@ -59,16 +59,16 @@ mmt run muji
 
 常见场景：
 
-例如我每次开发一些项目的时候都会用到 docker ，但是不同的项目想启动不同的实例。这个时候我就需要在电脑重启的时候启动对应的实例了。
+每当我们需要切换项目的时候，有一些预制环境，mmt能够帮助我们处理这些情况。例如我的某个本地项目需要依赖两个容器环境 e8a47b8aed91 和 e0d433a26388 这个时候运行mmt 将会自动执行命令。
 
 ```
-mmt add-sync start-docker "docker restart 0d0awew0d";
-mmt add-sync start-docker "docker restart 1d1awew0d";
+mmt add-sync start-docker "docker restart e8a47b8aed91";
+mmt add-sync start-docker "docker restart e0d433a26388";
 
 mmt run start-docker
 
-> docker restart 0d0awew0d
-> docker restart 1d1awew0d
+> docker restart e8a47b8aed91
+> docker restart e0d433a26388
 ```
 此时会在当前 tab 页里，一次运行以上两个命令
 

@@ -58,16 +58,16 @@ Add a synchronization task, the task will be executed directly on the current pa
 
 Common scenarios:
 
-For example, one of my local projects needs to depend on two container environments 0d0awew0d and 1d1awew0d. At this time, running mmt will automatically execute the command.
+For example, whenever we need to switch projects, there are some pre-made environments and mmt can help us handle those situations. For example, one of my local projects needs to depend on two container environments e8a47b8aed91 and e0d433a26388. At this time, running mmt will automatically execute the command.
 
 ```
-mmt add-sync start-docker "docker restart 0d0awew0d";
-mmt add-sync start-docker "docker restart 1d1awew0d";
+mmt add-sync start-docker "docker restart e8a47b8aed91";
+mmt add-sync start-docker "docker restart e0d433a26388";
 
 mmt run start-docker
 
-> docker restart 0d0awew0d
-> docker restart 1d1awew0d
+> docker restart e8a47b8aed91
+> docker restart e0d433a26388
 ```
 
 ### ls
