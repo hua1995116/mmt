@@ -9,18 +9,18 @@
     <a href="https://www.npmjs.com/package/mmt" rel="nofollow"><img src="https://img.shields.io/npm/l/mmt.svg?style=flat" style="max-width:100%;"></a>
 </p>
 
-使用其他语言阅读: 简体中文 | [English](./README_en.md)
+使用其他语言阅读: [简体中文](./README.md) | English
 
-# 介绍
+# Introduction
 
-MMT (Manage Multiple Task) 是一个多任务流程的管理命令工具，专注解放你的生产力。
+MMT (Manage Multiple Task) is a multi-task process management command tool, focusing on liberating your productivity.
 
 
-# 安装
+# Installation
 ```
 npm i -g mmt
 ```
-## 使用
+## Use
 
 ```bash
 mmt add-sync hello "echo 'hello1' "
@@ -35,31 +35,30 @@ mmt run hello
 
 ### add
 
-支持平台: Mac/Linux
+Support platform: Mac/Linux
 
-添加一个异步任务，任务会以新建一个 tab 页启动。
+Add an asynchronous task, the task will start with a new tab page.
 
-常见场景:
+Common scenarios:
 
-当我们有一个全栈服务的时候，我们需要启动前端和后端，这个时候我们每次都需要麻烦的切换 tab 页，然后启动两个服务
+When we have a full stack service, we need to start the frontend and backend. At this time, we need to switch tab pages every time, and then start two services.
 
-示例:
-例如我的另一个项目「木及简历」是一个全栈项目，这个时候我想要快速启动前后端就可以这样做。
+For example, my other project "Mujicv" is a full-stack project. At this time, I can do this if I want to quickly start the front-end and back-end.
 ```
 mmt add muji "cd frontend/path && npm run start";
 mmt add muji "cd server/path && npm run dev";
 
 mmt run muji
 ```
-此时会新开两个 tab 页面运行前端和后端服务。
+At this point, two new tab pages will be opened to run the front-end and back-end services.
 
 ### add-sync
 
-添加一个同步任务，任务会在当前页面直接执行。
+Add a synchronization task, the task will be executed directly on the current page.
 
-常见场景：
+Common scenarios:
 
-例如我每次开发一些项目的时候都会用到 docker ，但是不同的项目想启动不同的实例。这个时候我就需要在电脑重启的时候启动对应的实例了。
+For example, one of my local projects needs to depend on two container environments 0d0awew0d and 1d1awew0d. At this time, running mmt will automatically execute the command.
 
 ```
 mmt add-sync start-docker "docker restart 0d0awew0d";
@@ -70,12 +69,10 @@ mmt run start-docker
 > docker restart 0d0awew0d
 > docker restart 1d1awew0d
 ```
-此时会在当前 tab 页里，一次运行以上两个命令
-
 
 ### ls
 
-列出当前任务有哪些命令
+List what commands the current task has.
 
 ```
 mmt ls muji
@@ -86,7 +83,7 @@ mmt ls muji
 ```
 
 ### rm
-删除一个任务
+Delete a task.
 
 `mmt rm <task>`
 
@@ -97,7 +94,7 @@ mmt rm muji
 
 ### run
 
-运行一个任务
+Run a task.
 
 `mmt run <task>`
 
@@ -109,12 +106,12 @@ mmt run muji
 
 `mmt export <task>`
 
-导出所有配置
+Export all configurations.
 ```
 mmt export all
 ```
 
-导出单个配置
+Export a single configuration.
 
 ```
 mmt export muji
