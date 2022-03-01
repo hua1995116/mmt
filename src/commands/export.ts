@@ -3,15 +3,15 @@ import { getConfig, downloadConfig } from '../utils';
 import * as path from 'path';
 
 type Options = {
-  name?: string
+  name: string
 };
 
-export const command: string = 'export';
+export const command: string = 'export <name>';
 export const desc: string = 'export <name> e.g., mmt export muji';
 
 export const builder: CommandBuilder<Options, Options> = (yargs) =>
   yargs
-    .positional('name', { type: 'string' });
+    .positional('name', { type: 'string', demandOption: true });
 
 export const handler = (argv: Arguments<Options>): void => {
   const config = getConfig();
@@ -19,7 +19,7 @@ export const handler = (argv: Arguments<Options>): void => {
 
   const epxortPath = path.join(process.cwd(), 'mmt-export.json')
 
-  if (!name) {
+  if (name === 'all') {
     downloadConfig(epxortPath, JSON.stringify(config, null, 4));
     console.log(`export success at ${epxortPath}`);
     return;
@@ -35,9 +35,11 @@ export const handler = (argv: Arguments<Options>): void => {
     task: config[name],
   }
 
-  downloadConfig(epxortPath, JSON.stringify(exportSingle, null, 4));
+  const singlePath = path.join(process.cwd(), `mmt-export-${name}.json`)
 
-  console.log(`export success at ${epxortPath}!`);
+  downloadConfig(singlePath, JSON.stringify(exportSingle, null, 4));
+
+  console.log(`export success at ${singlePath}!`);
 
   process.exit(0);
 };
