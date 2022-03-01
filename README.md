@@ -4,6 +4,13 @@
 </p>
 
 
+<p align="center">
+    <a href="https://npmcharts.com/compare/mmt?minimal=true" rel="nofollow"><img src="https://img.shields.io/npm/dm/mmt.svg" style="max-width:100%;"></a>
+    <a href="https://www.npmjs.com/package/mmt" rel="nofollow"><img src="https://img.shields.io/npm/v/mmt.svg" style="max-width:100%;"></a>
+    <a href="https://www.npmjs.com/package/mmt" rel="nofollow"><img src="https://img.shields.io/npm/l/mmt.svg?style=flat" style="max-width:100%;"></a>
+</p>
+
+
 # 介绍
 
 MMT (Manage Multiple Task) 是一个多任务流程的管理命令工具，专注解放你的生产力。
@@ -98,6 +105,20 @@ mmt rm muji
 mmt run muji
 ```
 
+### export
+
+`mmt export <task>`
+
+导出所有配置
+```
+mmt export all
+```
+
+导出单个配置
+
+```
+mmt export muji
+```
 
 
 
