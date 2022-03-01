@@ -9,7 +9,7 @@
     <a href="https://www.npmjs.com/package/mmt" rel="nofollow"><img src="https://img.shields.io/npm/l/mmt.svg?style=flat" style="max-width:100%;"></a>
 </p>
 
-使用其他语言阅读: [简体中文](./README.md) | English
+Read this in other languages: [简体中文](./README.md) | English
 
 # Introduction
 
