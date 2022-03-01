@@ -3,13 +3,13 @@
   <img src="./source/mmt-logo.png" width="300" />
 </p>
 
-
 <p align="center">
     <a href="https://npmcharts.com/compare/mmt?minimal=true" rel="nofollow"><img src="https://img.shields.io/npm/dm/mmt.svg" style="max-width:100%;"></a>
     <a href="https://www.npmjs.com/package/mmt" rel="nofollow"><img src="https://img.shields.io/npm/v/mmt.svg" style="max-width:100%;"></a>
     <a href="https://www.npmjs.com/package/mmt" rel="nofollow"><img src="https://img.shields.io/npm/l/mmt.svg?style=flat" style="max-width:100%;"></a>
 </p>
 
+使用其他语言阅读: [简体中文](./README.md) | English
 
 # Introduction
 
