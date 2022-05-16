@@ -43,7 +43,7 @@ In any command window:
 > mmt run case1
 ```
 
-The effect is the following(自动开启多个窗口,并在对应窗口执行命令):
+The effect is the following(Automatically open multiple windows and execute commands in the corresponding windows):
 
 ![](./source/case1.gif)
 
