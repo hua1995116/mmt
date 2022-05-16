@@ -26,9 +26,9 @@ npm i -g mmt
 
 当你的项目是拥有前后端两个工程，你总是需要记住多个命令或者是多个目录，而开启多个窗口总是会比较麻烦。
 
-你的前端项目：case1-front 启动命令: npm run start
+你的前端项目：case1-front, 启动命令: npm run start
 
-你的后端项目: case1-backend 启动命令: npm run dev
+你的后端项目: case1-backend, 启动命令: npm run dev
 
 使用 mmt 声明:
 ```
@@ -38,7 +38,7 @@ npm i -g mmt
 > mmt add case1 dev
 ```
 
-在任意命令窗口
+在任意命令窗口:
 ```
 > mmt run case1
 ```
@@ -52,7 +52,7 @@ npm i -g mmt
 当你一个人维护多个技术栈的项目，启动命令总是记不住，使用 Vue 项目启动命令可能是 `npm run serve`, 而使用 React 项目却是 `npm run start`, 有些项目还可能是 `npm run dev`。使用 mmt 可以抹平这种差异，并且你无须记忆你的工程路径。
 
 你的项目1: projec1-vue, 启动命令 `npm run serve`
-你的项目1: projec2-react, 启动命令 `npm run start`
+你的项目2: projec2-react, 启动命令 `npm run start`
 
 
 使用 mmt 声明:
