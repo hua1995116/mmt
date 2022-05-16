@@ -41,7 +41,7 @@ export const handler = (argv: Arguments<Options>): void => {
     // 说明存在
     if (data.scripts[task]) {
       // 如果当前命令是 package.json 的命令，则直接添加
-      curTask = `cd ${process.cwd()} && ` + data.scripts[task];
+      curTask = `cd ${process.cwd()} && npm run ${task}`;
     }
   }
 

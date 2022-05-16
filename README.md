@@ -13,29 +13,86 @@
 
 # 介绍
 
-MMT (Manage Multiple Task) 是一个多任务流程的管理命令工具，专注解放你的生产力。
+MMT (Manage Multiple Task) 是 MacOS + iTerm2 的一个自动执行多个命令工具，一次定义永久受益！
 
 
 # 安装
 ```
 npm i -g mmt
 ```
-## 使用
+## 使用场景
 
-```bash
-mmt add-sync hello "echo 'hello1' "
-mmt add-sync hello "echo 'hello2' "
+### Case1:
 
-mmt run hello
-> hello1
-> hello2
+当你的项目是拥有前后端两个工程，你总是需要记住多个命令或者是多个目录，而开启多个窗口总是会比较麻烦。
+
+你的前端项目：case1-front， 启动命令: npm run start
+
+你的后端项目: case1-backend 启动命令: npm run dev
+
+使用 mmt 声明:
 ```
+> cd path/case1-front
+> mmt add case1 start
+> cd path/case1-backend
+> mmt add case1 dev
+```
+
+在任意命令窗口
+```
+> mmt run case1
+```
+
+效果如下(自动开启多个窗口,并在对应窗口执行命令):
+
+![](./source/case1.gif)
+
+### Case2:
+
+当你一个人维护多个技术栈的项目，启动命令总是记不住，使用 Vue 项目启动命令可能是 `npm run serve`, 而使用 React 项目却是 `npm run start`, 有些项目还可能是 `npm run dev`。使用 mmt 可以抹平这种差异，并且你无须记忆你的工程路径。
+
+你的项目1: projec1-vue, 启动命令 `npm run serve`
+你的项目1: projec2-react, 启动命令 `npm run start`
+
+
+使用 mmt 声明:
+```
+> cd path/projec1-vue
+> mmt add project1 serve
+> cd path/projec2-react
+> mmt add project2 start
+```
+
+在任意命令窗口
+```
+> mmt run project1
+> mmt run project2
+```
+
+效果如下:
+
+![](./source/case2.gif)
+
+### Case3:
+
+当你想要同步运行一些流程线的工作，你就可以使用 `add-sync` 方式，例如我想同时启动我某个工程的两个 docker 实例
+
+
+```
+> mmt add-sync project1-dep "docker restart e8a47b8aed91"
+> mmt add-sync project1-dep "docker restart e0d433a26388"
+```
+
+在任意命令窗口
+```
+> mmt run project1-dep
+```
+
+![](./source/case3.gif)
 
 ## API
 
 ### add
-
-支持平台: Mac/Linux
 
 添加一个异步任务，任务会以新建一个 tab 页启动。
 
@@ -51,7 +108,7 @@ mmt add muji "cd server/path && npm run dev";
 
 mmt run muji
 ```
-此时会新开两个 tab 页面运行前端和后端服务。
+此时会新开两个窗口运行前端和后端服务。
 
 ### add-sync
 
@@ -120,4 +177,3 @@ mmt export all
 mmt export muji
 ```
 
-## 最佳实践
