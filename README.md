@@ -22,11 +22,11 @@ npm i -g mmt
 ```
 ## 使用场景
 
-### Case1:
+### Case1: 单项目多仓库
 
 当你的项目是拥有前后端两个工程，你总是需要记住多个命令或者是多个目录，而开启多个窗口总是会比较麻烦。
 
-你的前端项目：case1-front， 启动命令: npm run start
+你的前端项目：case1-front 启动命令: npm run start
 
 你的后端项目: case1-backend 启动命令: npm run dev
 
@@ -47,7 +47,7 @@ npm i -g mmt
 
 ![](./source/case1.gif)
 
-### Case2:
+### Case2: 多项目多仓库
 
 当你一个人维护多个技术栈的项目，启动命令总是记不住，使用 Vue 项目启动命令可能是 `npm run serve`, 而使用 React 项目却是 `npm run start`, 有些项目还可能是 `npm run dev`。使用 mmt 可以抹平这种差异，并且你无须记忆你的工程路径。
 
@@ -73,9 +73,9 @@ npm i -g mmt
 
 ![](./source/case2.gif)
 
-### Case3:
+### Case3: 脚本别名
 
-当你想要同步运行一些流程线的工作，你就可以使用 `add-sync` 方式，例如我想同时启动我某个工程的两个 docker 实例
+当你想要同步运行一些流程线的工作，你就可以使用 `add-sync` 方式，例如我的某个本地项目需要依赖两个容器环境 e8a47b8aed91 和 e0d433a26388 这个时候运行 mmt 将会自动执行命令。
 
 
 ```
