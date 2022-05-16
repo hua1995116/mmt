@@ -1,5 +1,6 @@
 import type { Arguments, CommandBuilder } from 'yargs';
 import { getConfig, saveConfig } from '../utils';
+import { pkgRead } from 'package-io';
 
 type Options = {
   task: string;
@@ -27,11 +28,24 @@ export const handler = (argv: Arguments<Options>): void => {
   }
 
   if (config[name].type !== 'async') {
-		console.error("The current task has been set to <sync>, a task cannot be assigned multiple types.")
-		process.exit(0);
-	}
+    console.error("The current task has been set to <sync>, a task cannot be assigned multiple types.")
+    process.exit(0);
+  }
 
-  config[name].cm.push(task);
+
+  let curTask = task;
+
+  // 解析当前 package.json 优先
+  const data = pkgRead() as any;
+  if (data.name) {
+    // 说明存在
+    if (data.scripts[task]) {
+      // 如果当前命令是 package.json 的命令，则直接添加
+      curTask = `cd ${process.cwd()} && ` + data.scripts[task];
+    }
+  }
+
+  config[name].cm.push(curTask);
 
   saveConfig(config);
 

@@ -1,6 +1,8 @@
 import type { Arguments, CommandBuilder } from 'yargs';
 import { getConfig, run } from '../utils';
-import { TTAB } from '../const';
+// import { TTAB } from '../const';
+import { parse } from '../parse';
+const applescript = require("applescript");
 
 type Options = {
   name: string;
@@ -30,12 +32,13 @@ export const handler = async (argv: Arguments<Options>): Promise<void> => {
     return;
   }
 
-  for (let i = 0; i < tasklist.cm.length; i++) {
-    await run([
-      TTAB,
-      `'${tasklist.cm[i]}'`
-    ]);
-  }
+  const script = parse(tasklist.cm);
 
-  process.exit(0);
+  applescript.execString(script, function(err: any) {
+    if (err) {
+      // Something went wrong!
+      console.error(err);
+    }
+    process.exit(0);
+  });
 };

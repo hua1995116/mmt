@@ -1,27 +1,20 @@
 import type { Arguments, CommandBuilder } from 'yargs';
 import { getConfig } from '../utils';
+import chalk from 'chalk';
 
 type Options = {
   name: string;
 };
 
-export const command: string = 'ls <name>';
-export const desc: string = 'ls <name> with task';
-
-export const builder: CommandBuilder<Options, Options> = (yargs) =>
-  yargs
-    .positional('name', { type: 'string', demandOption: true });
+export const command: string = 'ls';
+export const desc: string = 'show all tasks.';
 
 export const handler = async (argv: Arguments<Options>): Promise<void> => {
   const config = getConfig();
-  const { name } = argv;
 
-  if (!config[name]) {
-    console.log(`No task with ${name} found.`);
-    return;
-  }
+  const allTasks = Object.keys(config).map(item => "- " + (config[item].type === 'async' ? chalk.black.bgWhite(config[item].type) : chalk.black.bgGreen(config[item].type)) + " " + item).join("\n");
 
-  console.log(config[name].cm.join("\n"));
+  console.log(allTasks);
 
   process.exit(0);
 };
