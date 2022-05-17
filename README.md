@@ -13,7 +13,7 @@ Read this in other languages: [简体中文](./README.md) | English
 
 # Introduction
 
-MMT (Manage Multiple Task) is a tool for automatically executing multiple commands in MacOS + iTerm2. It only needs to be defined once and run permanently.
+MMT (Manage Multiple Task) is a tool that automatically opens multiple panes to execute multiple commands in MacOS + iTerm2. It only needs to be defined once and run permanently.
 
 
 # Installation

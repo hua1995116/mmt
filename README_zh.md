@@ -13,7 +13,7 @@
 
 # 介绍
 
-MMT (Manage Multiple Task) 是 MacOS + iTerm2 的一个自动执行多个命令工具，一次定义永久受益！
+MMT (Manage Multiple Task) 是 MacOS + iTerm2 的一个自动打开多个窗口并执行命令工具，一次定义永久受益！
 
 
 # 安装
